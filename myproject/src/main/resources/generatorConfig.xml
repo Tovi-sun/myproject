@@ -10,7 +10,7 @@
         </commentGenerator>
         <!--需要配置数据库连接-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/resource_mgt?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
+                        connectionURL="jdbc:mysql://localhost:3306/mytest?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
                         userId="root" password= "123456">
     </jdbcConnection>
 
@@ -35,7 +35,7 @@
     </javaClientGenerator>
 
     <!--table是指定每个表的生成策略-->
-    <table tableName="power_unit" domainObjectName="PowerUnit"></table>
+    <table tableName="user" domainObjectName="User"></table>
 
 </context>
         </generatorConfiguration>
