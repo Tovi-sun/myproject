@@ -6,9 +6,6 @@ import org.sunyiwei.common.ResponseResult;
 import org.sunyiwei.dao.UserMapper;
 import org.sunyiwei.entity.User;
 import org.sunyiwei.entity.UserExample;
-
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +50,23 @@ public class UserServiceImpl implements UserService{
             result.setData(list);
         }else {
             result.setData(users);
+        }
+        return result;
+    }
+
+    @Override
+    public ResponseResult<Void> delete(int id) {
+        ResponseResult<Void> result = new ResponseResult<>();
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andIdEqualTo(id);
+        int i = userMapper.deleteByExample(userExample);
+        if(i>0){
+            result.setStatus(200);
+            result.setMsg("删除成功");
+        }else {
+            result.setStatus(400);
+            result.setMsg("删除失败");
         }
         return result;
     }

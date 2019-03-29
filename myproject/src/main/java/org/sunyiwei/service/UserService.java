@@ -15,4 +15,5 @@ import java.util.List;
 public interface UserService {
     ResponseResult<Void> insertUser(User user);
     ResponseResult<List<User>> getUser();
+    ResponseResult<Void> delete(int id);
 }
